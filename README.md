@@ -212,8 +212,8 @@ riscv64-unknown-elf-objdump -d -M no-aliases -j .text printArray.o
 ___
 - Рассмотрим таблицу символов и таблицу перемещений с помощью команд
 ```bash
-riscv64-unknown-elf-objdump -t main.o insertionSort.o printArray.o>symbolTable
-riscv64-unknown-elf-objdump -r main.o insertionSort.o printArray.o>relocationTable
+riscv64-unknown-elf-objdump -t main.o insertionSort.o printArray.o > symbolTable
+riscv64-unknown-elf-objdump -r main.o insertionSort.o printArray.o > relocationTable
 
 ```
 - Откроем их через блокнот
@@ -265,7 +265,7 @@ riscv64-unknown-elf-gcc main.c lib.a -o main.out -march=rv32i -mabi=ilp32 -O1
 ```bash
 riscv64-unknown-elf-objdump -t main.out > main.ds
 notepad main.ds
-riscv64-unknown-elf-objdump -j .text -d -M no-aliases -t main.out >mainMoreflags.ds
+riscv64-unknown-elf-objdump -j .text -d -M no-aliases -t main.out > mainMoreflags.ds
 notepad mainMoreflags.ds
 
 ```
