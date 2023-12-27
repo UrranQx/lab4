@@ -1,5 +1,6 @@
 # lab4
 ## Файлы
+*Note - "insetrionSort" написано с грамматической ошибкой.*
 ### main.c
 ```c
 // C program for insertion sort
