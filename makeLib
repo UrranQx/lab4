@@ -1,0 +1,13 @@
+CC=riscv64-unknown-elf-gcc
+AR=riscv64-unknown-elf-ar
+CFLAGS = -march=rv32i -mabi=ilp32 -O1
+mainSort: lib
+
+lib: insertionSort.o printArray.o
+	$(AR) -rsc lib.a insertionSort.o printArray.o
+	del -f *.o
+insertionSort.o: insertionSort.c
+	$(CC) $(CFLAGS) -c insertionSort.c -o insertionSort.o
+printArray.o: printArray.c
+	$(CC) $(CFLAGS) -c printArray.c -o printArray.o
+

@@ -1,0 +1,10 @@
+CC=riscv64-unknown-elf-gcc
+AR=riscv64-unknown-elf-ar
+MAKE=mingw32-make
+CFLAGS = -march=rv32i -mabi=ilp32 -O1
+mainApp: all
+
+all:
+	$(MAKE) -f makeLib
+	$(CC) $(CFLAGS) main.c lib.a -o main.out
+	del -f *.0 *.a
